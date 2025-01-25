@@ -12,9 +12,24 @@
             height: 100%;
             overflow: hidden;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: flex-end; /* Align to the bottom */
             align-items: center;
-            background-color: #f0f0f0; /* Light background for contrast */
+            background-color: #ffffff; /* White background */
+        }
+
+        /* Container for the image at the bottom */
+        .image-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px; /* Add some space above the image */
+        }
+
+        /* Image styling */
+        .image-container img {
+            width: 150px; /* Set a specific width for the image */
+            height: auto; /* Keep the aspect ratio */
         }
 
         /* Container for the 3D scene (box with frame) */
@@ -40,6 +55,9 @@
 <body>
     <div class="scene-container">
         <canvas class="webgl"></canvas>
+    </div>
+    <div class="image-container">
+        <img src="assets/Gila.png" alt="Gila Logo" />
     </div>
     <script type="module" src="index.js"></script>
 </body>
