@@ -10,19 +10,37 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden; /* Prevent scrolling */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0; /* Light background for contrast */
         }
 
-        /* Make the canvas take up the full screen */
+        /* Container for the 3D scene (box with frame) */
+        .scene-container {
+            position: relative;
+            width: 60vw; /* 60% of the screen width */
+            height: 60vh; /* 60% of the screen height */
+            border: 5px solid #000; /* Frame around the scene */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+
+        /* The canvas where the 3D model will be rendered */
         .webgl {
             width: 100%;
             height: 100%;
-            display: block; /* Remove any default canvas margin/padding */
+            display: block;
         }
     </style>
 </head>
 <body>
-    <canvas class="webgl"></canvas>
+    <div class="scene-container">
+        <canvas class="webgl"></canvas>
+    </div>
     <script type="module" src="index.js"></script>
 </body>
 </html>
